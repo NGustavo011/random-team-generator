@@ -73,7 +73,6 @@ function outputResult(teams){
             playerSpan.append(player)
         }
     }
-    
 }
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
