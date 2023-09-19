@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random team generator</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div id="input-data">
+        <form id="input-form" onsubmit="generateTeams();return false">
+            <div id="team-quantity">
+                <span>
+                    Quantidade de times:
+                </span>
+                <input id="team-quantity-input" type="number" />
+            </div>
+            <div id="players">
+                <span>
+                    Jogadores (%nome/%nível):
+                </span>
+                <textarea id="players-input" type="number"></textarea>
+            </div>
+            <input id="submit-form" type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="result">
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
