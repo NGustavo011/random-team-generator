@@ -54,7 +54,15 @@ function generateTeams() {
 }
 
 function outputResult(teams){
-    shuffleArray(teams)
+    teams = teams.sort((a, b)=> {
+        if (a.length > b.length) {
+            return -1;
+        }
+        if (a.length < b.length) {
+            return 1;
+        }
+        return 0;
+    })
     const resultDiv = document.querySelector("#result")
     removeAllChildNodes(resultDiv)
     const teamTitle = document.createElement("h2")
