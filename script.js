@@ -8,7 +8,7 @@ function generateTeams() {
     const playersArray = players.toString().split(/\r?\n/);
     const playersObjectArray = []
     for(const playerData of playersArray){
-        if(playerData=="") continue;
+        if(playerData=="" || playerData.trim()=="Lista") continue;
         if(!playerData.includes("/")){
             alert(`Formato de jogador inválido: ${playerData}.\nPor favor preencha no formato (%nome/%nível) como: Gustavo/1.`)
             return;
