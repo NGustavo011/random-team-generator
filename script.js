@@ -40,9 +40,9 @@ function generateTeams() {
     let order = "cresc"
     for(const player of playersObjectArraySorted){ 
         if(order==="cresc"){
-            teams[contador++].push(player.name)
+            teams[contador++].push(player.name.toUpperCase())
         } else {   
-            teams[--contador].push(player.name)
+            teams[--contador].push(player.name.toUpperCase())
         }
         if(contador==teamQuantity){
             order="desc"
