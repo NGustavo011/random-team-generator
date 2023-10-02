@@ -7,14 +7,15 @@ function generateTeams() {
     }
     const playersArray = players.toString().split(/\r?\n/);
     const playersObjectArray = []
+    const regex = /\d+\ *\-/
     for(const playerData of playersArray){
-        if(playerData=="" || playerData.trim()=="Lista") continue;
+        if(playerData=="" || playerData.trim()=="Lista" || playerData.replace(regex, "").trim()=="") continue;
         if(!playerData.includes("/")){
             alert(`Formato de jogador inválido: ${playerData}.\nPor favor preencha no formato (%nome/%nível) como: Gustavo/1.`)
             return;
         }
-        const regex = /\d+\ *\-/
-        const name = playerData.split("/")[0].replace(regex, "").trim()
+        const name = playerData.split("/")[0].replace(regex, "").split("(")[0].trim()
+        if(!name) continue;
         const level = playerData.split("/")[1].trim()
         playersObjectArray.push({
             name,
